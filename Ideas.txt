@@ -1,0 +1,13 @@
+Cuando jack pasa por encima de la pistola la agarra. Como? no sé :D
+
+DISPARAR
+- cuando se toca le flechita a la derecha sale una bala 
+- se mueve 5 celdas cada 0.5 segundos
+- sigue la posicion donde el jugador disparo
+- una vez que hace 5 desaparece
+- (por ahora solo se puede disparar una bala a la vez)
+
+VIDA AL ENEMIGO
+
+OTRA ARMA(?)
+- agarrar una y dejar la que se tiene en el piso

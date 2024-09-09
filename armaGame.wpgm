@@ -1,0 +1,44 @@
+import wollok.game.*
+
+import armas.*
+import personaje.*
+import position.*
+
+program armaGame{
+    
+    //
+    game.title("Prueba-Armas!")
+    game.height(10)
+    game.width(10)
+
+
+    // VISUALS
+    game.addVisual(jack)
+    game.addVisual(pistola)
+    game.addVisual(balaPistola)
+    game.addVisual(enemigo)
+
+    // Movimientos
+    keyboard.w().onPressDo( {jack.mover(arriba)})
+    keyboard.d().onPressDo( {jack.mover(derecha)})
+    keyboard.s().onPressDo( {jack.mover(abajo)})
+    keyboard.a().onPressDo( {jack.mover(izquierda)})
+    
+    // disparar
+
+    keyboard.right().onPressDo( { jack.disparar(balaPistola)})
+
+    //mover bala
+    game.onTick(0500, "moverBala", { balaPistola.moverBala() })
+
+    //colision
+    game.onCollideDo(jack, { arma => arma.agarrar() jack.decir("Agarre un ama, Oh Yeah!")} )
+
+    //debug
+    game.showAttributes(jack)
+    game.showAttributes(pistola)
+
+
+    // game inicio
+	game.start()
+}
