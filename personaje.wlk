@@ -27,10 +27,6 @@ object jack{
     }
 
 
-    method decir(texto){
-        return texto
-    }
-
 // Disparar
     method disparar(bala){
         if(self.tieneArmaEquipada()){

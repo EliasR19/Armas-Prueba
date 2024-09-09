@@ -28,11 +28,11 @@ program armaGame{
 
     keyboard.right().onPressDo( { jack.disparar(balaPistola)})
 
-    //mover bala
+    //mover bala  001
     game.onTick(0500, "moverBala", { balaPistola.moverBala() })
 
     //colision
-    game.onCollideDo(jack, { arma => arma.agarrar() jack.decir("Agarre un ama, Oh Yeah!")} )
+    game.onCollideDo(jack, { arma => arma.agarrar() game.say(jack, "Agarre un ama, Oh Yeah!")} )
 
     //debug
     game.showAttributes(jack)

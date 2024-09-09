@@ -40,12 +40,12 @@ object pistola{
 object balaPistola{
     var dano = 10 // para despues
     var maxDistancia = 5    //distancia en celdas
-    var  distanciaRecorrida = 0
+    var  distanciaRecorrida = 10
     
 
 
     //position
-    var position = game.at(-1,0)
+    var position = game.at(1,0)
     var property positionDisparo = self.position()
 
     method text() = "bala\n Distancia\n" + self.distanciaRecorrida() 
@@ -69,17 +69,19 @@ object balaPistola{
     method disparo(){
         self.distanciaRecorrida(0)
         self.positionDisparo(self.position())
-        //self.moverBala()
+        self.moverBala()
     }
 
     method moverBala(){
-        //mover bala con loop armado
+        //mover bala con loop armado 001
+        
         if(distanciaRecorrida < maxDistancia){
             self.distanciaRecorrida(self.distanciaRecorrida() + 1)
 
             self.position(game.at(self.positionDisparo().x() + 1 , self.positionDisparo().y()))
             self.positionDisparo(self.position())
 
+            
             enemigo.morir()
 
         } else if(distanciaRecorrida >= maxDistancia){
@@ -88,7 +90,17 @@ object balaPistola{
         } else{
             null
         }
-        
+
+        /* Intento de loop 002
+        5.times( { n => self.distanciaRecorrida(self.distanciaRecorrida() + 1)
+            self.position(game.at(self.positionDisparo().x() + 1 , self.positionDisparo().y()))
+            self.positionDisparo(self.position())
+
+            enemigo.morir()
+
+        } )
+        self.position(game.at(1,0))
+        */
     }
 
     //polimorfismo  pero en realidad no, porque este objeto deberia ir en otro archivo :)
