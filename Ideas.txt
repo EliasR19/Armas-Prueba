@@ -11,3 +11,7 @@ VIDA AL ENEMIGO
 
 OTRA ARMA(?)
 - agarrar una y dejar la que se tiene en el piso
+
+--------- Para después--
+La bala se mueve con gametick. Se podria mover por loop pero no se ve como se va moviendo. Solo "sale del arma" y vuelve a su posicion, no se ve.
+Creo que se puede hacer por loop y agregandole una animacion (pero todavia no sé como)
